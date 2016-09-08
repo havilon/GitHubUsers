@@ -39,3 +39,18 @@ Pods/Target Support Files/Pods-GitHubUsers/Pods-GitHubUsers.modulemap
 Pods/Target Support Files/Pods-GitHubUsers/Pods-GitHubUsers.release.xcconfig
 GitHubUsers.xcworkspace/contents.xcworkspacedata
 Pods/Manifest.lock
+Pods/Gloss/LICENSE
+Pods/Gloss/README.md
+Pods/Gloss/Sources/Decoder.swift
+Pods/Gloss/Sources/Encoder.swift
+Pods/Gloss/Sources/ExtensionArray.swift
+Pods/Gloss/Sources/ExtensionDictionary.swift
+Pods/Gloss/Sources/Gloss.swift
+Pods/Gloss/Sources/Operators.swift
+Pods/Pods.xcodeproj/xcuserdata/havilon.xcuserdatad/xcschemes/Gloss.xcscheme
+Pods/Target Support Files/Gloss/Gloss-dummy.m
+Pods/Target Support Files/Gloss/Gloss-prefix.pch
+Pods/Target Support Files/Gloss/Gloss-umbrella.h
+Pods/Target Support Files/Gloss/Gloss.modulemap
+Pods/Target Support Files/Gloss/Gloss.xcconfig
+Pods/Target Support Files/Gloss/Info.plist

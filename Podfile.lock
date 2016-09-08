@@ -1,10 +1,13 @@
 PODS:
   - Alamofire (3.4.2)
+  - Gloss (0.7.4)
 
 DEPENDENCIES:
   - Alamofire (~> 3.0)
+  - Gloss (~> 0.7)
 
 SPEC CHECKSUMS:
   Alamofire: 6aa33201d20d069e1598891cf928883ff1888c7a
+  Gloss: d86009ef4d12c221d889c4e3f9e1eb547ee6251d
 
 COCOAPODS: 0.39.0
