@@ -12,6 +12,7 @@ struct GitHubUser: Decodable {
    let userId: Int?
    let login: String?
    let avatarURL: String?
+   var avatarImage: UIImage?
    let htmlURL: String?
    
    // MARK: - Deserialization
@@ -23,4 +24,14 @@ struct GitHubUser: Decodable {
       self.htmlURL = "html_url" <~~ json
    }
    
+   // MARK: - Serialization
+   
+   func toJSON() -> JSON? {
+      return jsonify([
+         "id" ~~> self.userId,
+         "login" ~~> self.login,
+         "avatar_url" ~~> self.avatarURL,
+         "html_url" ~~> self.htmlURL
+         ])
+   }
 }
