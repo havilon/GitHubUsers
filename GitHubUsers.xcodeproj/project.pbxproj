@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		60EE8F3766E2F1E28EB68411 /* Pods_GitHubUsers.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C675B78812A9D28ED4B23535 /* Pods_GitHubUsers.framework */; };
+		B86D8D131D8805B800865B07 /* PendingOperations.swift in Sources */ = {isa = PBXBuildFile; fileRef = B86D8D121D8805B800865B07 /* PendingOperations.swift */; };
 		B8E298E41D8163C400752349 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8E298E31D8163C400752349 /* AppDelegate.swift */; };
 		B8E298E91D8163C400752349 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B8E298E71D8163C400752349 /* Main.storyboard */; };
 		B8E298EB1D8163C400752349 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B8E298EA1D8163C400752349 /* Assets.xcassets */; };
@@ -17,10 +18,12 @@
 		B8E298FD1D81756200752349 /* UserTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8E298FC1D81756200752349 /* UserTableViewCell.swift */; };
 		B8E298FF1D8189BC00752349 /* UserNetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8E298FE1D8189BC00752349 /* UserNetworkManager.swift */; };
 		B8E299051D87075500752349 /* Placeholder.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8E299041D87075500752349 /* Placeholder.swift */; };
+		B8E299071D8712F300752349 /* ImageDownloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8E299061D8712F300752349 /* ImageDownloader.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		2FA881F9496F147270A0466F /* Pods-GitHubUsers.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GitHubUsers.release.xcconfig"; path = "Pods/Target Support Files/Pods-GitHubUsers/Pods-GitHubUsers.release.xcconfig"; sourceTree = "<group>"; };
+		B86D8D121D8805B800865B07 /* PendingOperations.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PendingOperations.swift; sourceTree = "<group>"; };
 		B8E298E01D8163C400752349 /* GitHubUsers.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GitHubUsers.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B8E298E31D8163C400752349 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B8E298E81D8163C400752349 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -32,6 +35,7 @@
 		B8E298FC1D81756200752349 /* UserTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserTableViewCell.swift; sourceTree = "<group>"; };
 		B8E298FE1D8189BC00752349 /* UserNetworkManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserNetworkManager.swift; sourceTree = "<group>"; };
 		B8E299041D87075500752349 /* Placeholder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Placeholder.swift; sourceTree = "<group>"; };
+		B8E299061D8712F300752349 /* ImageDownloader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageDownloader.swift; sourceTree = "<group>"; };
 		C675B78812A9D28ED4B23535 /* Pods_GitHubUsers.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GitHubUsers.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F2D24E903C5AE9FD25B100A5 /* Pods-GitHubUsers.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GitHubUsers.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GitHubUsers/Pods-GitHubUsers.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -111,6 +115,8 @@
 				B8E298FA1D816B7900752349 /* GitHubUser.swift */,
 				B8E298FE1D8189BC00752349 /* UserNetworkManager.swift */,
 				B8E299041D87075500752349 /* Placeholder.swift */,
+				B8E299061D8712F300752349 /* ImageDownloader.swift */,
+				B86D8D121D8805B800865B07 /* PendingOperations.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -249,6 +255,8 @@
 				B8E298FD1D81756200752349 /* UserTableViewCell.swift in Sources */,
 				B8E298FB1D816B7900752349 /* GitHubUser.swift in Sources */,
 				B8E298F91D8167EA00752349 /* MainViewController.swift in Sources */,
+				B86D8D131D8805B800865B07 /* PendingOperations.swift in Sources */,
+				B8E299071D8712F300752349 /* ImageDownloader.swift in Sources */,
 				B8E298E41D8163C400752349 /* AppDelegate.swift in Sources */,
 				B8E298FF1D8189BC00752349 /* UserNetworkManager.swift in Sources */,
 				B8E299051D87075500752349 /* Placeholder.swift in Sources */,

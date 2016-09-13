@@ -8,11 +8,16 @@
 
 import Gloss
 
-struct GitHubUser: Decodable {
+protocol ImageInfo {
+   var image: UIImage? { get set }
+   var imageURL: String? { get set }
+}
+
+struct GitHubUser: Decodable, ImageInfo {
    let userId: Int?
    let login: String?
-   let avatarURL: String?
-   var avatarImage: UIImage?
+   var imageURL: String?
+   var image: UIImage?
    let htmlURL: String?
    
    // MARK: - Deserialization
@@ -20,7 +25,7 @@ struct GitHubUser: Decodable {
    init?(json: JSON) {
       self.userId = "id" <~~ json
       self.login = "login" <~~ json
-      self.avatarURL = "avatar_url" <~~ json
+      self.imageURL = "avatar_url" <~~ json
       self.htmlURL = "html_url" <~~ json
    }
    
@@ -30,7 +35,7 @@ struct GitHubUser: Decodable {
       return jsonify([
          "id" ~~> self.userId,
          "login" ~~> self.login,
-         "avatar_url" ~~> self.avatarURL,
+         "avatar_url" ~~> self.imageURL,
          "html_url" ~~> self.htmlURL
          ])
    }

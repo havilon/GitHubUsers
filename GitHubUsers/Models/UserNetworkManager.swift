@@ -15,7 +15,7 @@ class UserNetworkManger {
       var urlString = "https://api.github.com/users"
       
       if sinceId != nil {
-         urlString = NSString(format: "%@/since=%@", urlString, sinceId!) as String
+         urlString = urlString + "?since=\(sinceId!)"
       }
       
       Alamofire.request(.GET, urlString).responseJSON { response in
