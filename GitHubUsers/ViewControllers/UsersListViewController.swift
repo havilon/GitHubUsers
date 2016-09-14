@@ -1,5 +1,5 @@
 //
-//  MainViewController.swift
+//  UsersListViewController.swift
 //  GitHubUsers
 //
 //  Created by Sergey Myakinnikov on 9/8/16.
@@ -8,9 +8,8 @@
 
 import UIKit
 
-class MainViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
-
-   @IBOutlet weak var tableView: UITableView!
+class UsersListViewController: UITableViewController {
+   
    var usersArray: Array<GitHubUser>!
    var placeholderImage: UIImage!
    let pendingOperations = PendingOperations()
@@ -19,25 +18,27 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
    override func viewDidLoad() {
       super.viewDidLoad()
       
+      let userTableViewCellIdentifier = String(UserTableViewCell)
+      let nibName = UINib(nibName: userTableViewCellIdentifier, bundle: nil)
+      tableView.registerNib(nibName, forCellReuseIdentifier: userTableViewCellIdentifier)
+      tableView.rowHeight = 104
+      
       placeholderImage = Placeholder.imageWitText("Image", size: CGSize(width: 100, height: 100))
       
-      UserNetworkManger.getUsers(completion: {[unowned self] (gitHubUsers) in
-         self.usersArray = gitHubUsers
-         self.tableView.reloadData()
-      })
+      getUsers()
    }
    
    // MARK: - UITableViewDataSource
    
-   func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+   override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
       return 1
    }
    
-   func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+   override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
       return usersArray?.count ?? 0
    }
    
-   func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+   override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
       let cell = tableView.dequeueReusableCellWithIdentifier(String(UserTableViewCell), forIndexPath: indexPath) as! UserTableViewCell
       
       let gitHubUser = usersArray[indexPath.row]
@@ -58,9 +59,25 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
       return cell
    }
    
+   // MARK: - UITableView Delegate 
+   
+   override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+      let mainStoryboard = UIStoryboard()
+      let followersViewController = FollowersViewController()
+      let selectedIndexPath = tableView.indexPathForSelectedRow!
+      let userInfo = usersArray[selectedIndexPath.row]
+      
+      followersViewController.userName = userInfo.login
+      navigationController?.pushViewController(followersViewController, animated: true)
+   }
+   
    // MARK: - UIScrollView Delegate
    
-   func scrollViewDidScroll(scrollView: UIScrollView) {
+   override func scrollViewDidScroll(scrollView: UIScrollView) {
+      guard usersArray != nil else {
+         return
+      }
+      
       let offset = scrollView.contentOffset;
       let bounds = scrollView.bounds;
       let size = scrollView.contentSize;
@@ -73,34 +90,45 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
       if (y > h + reload_distance && !waitForNewUsers) {
          waitForNewUsers = true
          
-         UserNetworkManger.getUsers(usersArray.last?.userId, completion: {[unowned self] (gitHubUsers) in
-            self.waitForNewUsers = false
-            
-            if gitHubUsers != nil {
-               self.usersArray.appendContentsOf(gitHubUsers!)
-               self.tableView.reloadData()
-            }
-            })
+         getOtherUsers()
       }
    }
    
-   func scrollViewWillBeginDragging(scrollView: UIScrollView) {
+   override func scrollViewWillBeginDragging(scrollView: UIScrollView) {
       suspendAllOperations()
    }
    
-   func scrollViewDidEndDragging(scrollView: UIScrollView, willDecelerate decelerate: Bool) {
+   override func scrollViewDidEndDragging(scrollView: UIScrollView, willDecelerate decelerate: Bool) {
       if !decelerate {
          loadImagesForOnscreenCells()
          resumeAllOperations()
       }
    }
    
-   func scrollViewDidEndDecelerating(scrollView: UIScrollView) {
+   override func scrollViewDidEndDecelerating(scrollView: UIScrollView) {
       loadImagesForOnscreenCells()
       resumeAllOperations()
    }
    
    // MARK: - Private
+   
+   func getUsers() {
+      UserNetworkManger.getUsersSinceId(completion: {[unowned self] (gitHubUsers) in
+         self.usersArray = gitHubUsers
+         self.tableView.reloadData()
+         })
+   }
+   
+   func getOtherUsers() {
+      UserNetworkManger.getUsersSinceId(usersArray.last?.userId, completion: {[unowned self] (gitHubUsers) in
+         self.waitForNewUsers = false
+         
+         if gitHubUsers != nil {
+            self.usersArray.appendContentsOf(gitHubUsers!)
+            self.tableView.reloadData()
+         }
+         })
+   }
    
    func startDownloadImageForUser(imageInfo: ImageInfo, indexPath: NSIndexPath) {
       if pendingOperations.downloadsInProgress[indexPath] != nil {

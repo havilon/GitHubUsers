@@ -13,12 +13,14 @@
 		B8E298E91D8163C400752349 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B8E298E71D8163C400752349 /* Main.storyboard */; };
 		B8E298EB1D8163C400752349 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B8E298EA1D8163C400752349 /* Assets.xcassets */; };
 		B8E298EE1D8163C400752349 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B8E298EC1D8163C400752349 /* LaunchScreen.storyboard */; };
-		B8E298F91D8167EA00752349 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8E298F71D8167EA00752349 /* MainViewController.swift */; };
+		B8E298F91D8167EA00752349 /* UsersListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8E298F71D8167EA00752349 /* UsersListViewController.swift */; };
 		B8E298FB1D816B7900752349 /* GitHubUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8E298FA1D816B7900752349 /* GitHubUser.swift */; };
 		B8E298FD1D81756200752349 /* UserTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8E298FC1D81756200752349 /* UserTableViewCell.swift */; };
 		B8E298FF1D8189BC00752349 /* UserNetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8E298FE1D8189BC00752349 /* UserNetworkManager.swift */; };
 		B8E299051D87075500752349 /* Placeholder.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8E299041D87075500752349 /* Placeholder.swift */; };
 		B8E299071D8712F300752349 /* ImageDownloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8E299061D8712F300752349 /* ImageDownloader.swift */; };
+		B8F206DB1D882D550062BA50 /* FollowersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8F206DA1D882D550062BA50 /* FollowersViewController.swift */; };
+		B8F206DD1D8960070062BA50 /* UserTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B8F206DC1D8960070062BA50 /* UserTableViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,12 +32,14 @@
 		B8E298EA1D8163C400752349 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B8E298ED1D8163C400752349 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B8E298EF1D8163C400752349 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		B8E298F71D8167EA00752349 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		B8E298F71D8167EA00752349 /* UsersListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UsersListViewController.swift; sourceTree = "<group>"; };
 		B8E298FA1D816B7900752349 /* GitHubUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GitHubUser.swift; sourceTree = "<group>"; };
 		B8E298FC1D81756200752349 /* UserTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserTableViewCell.swift; sourceTree = "<group>"; };
 		B8E298FE1D8189BC00752349 /* UserNetworkManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserNetworkManager.swift; sourceTree = "<group>"; };
 		B8E299041D87075500752349 /* Placeholder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Placeholder.swift; sourceTree = "<group>"; };
 		B8E299061D8712F300752349 /* ImageDownloader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageDownloader.swift; sourceTree = "<group>"; };
+		B8F206DA1D882D550062BA50 /* FollowersViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FollowersViewController.swift; sourceTree = "<group>"; };
+		B8F206DC1D8960070062BA50 /* UserTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UserTableViewCell.xib; sourceTree = "<group>"; };
 		C675B78812A9D28ED4B23535 /* Pods_GitHubUsers.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GitHubUsers.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F2D24E903C5AE9FD25B100A5 /* Pods-GitHubUsers.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GitHubUsers.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GitHubUsers/Pods-GitHubUsers.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -97,6 +101,7 @@
 			isa = PBXGroup;
 			children = (
 				B8E298FC1D81756200752349 /* UserTableViewCell.swift */,
+				B8F206DC1D8960070062BA50 /* UserTableViewCell.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -104,7 +109,8 @@
 		B8E298F61D8167EA00752349 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				B8E298F71D8167EA00752349 /* MainViewController.swift */,
+				B8E298F71D8167EA00752349 /* UsersListViewController.swift */,
+				B8F206DA1D882D550062BA50 /* FollowersViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -160,11 +166,12 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0730;
-				LastUpgradeCheck = 0730;
+				LastUpgradeCheck = 0800;
 				ORGANIZATIONNAME = "Sergey Myakinnikov";
 				TargetAttributes = {
 					B8E298DF1D8163C400752349 = {
 						CreatedOnToolsVersion = 7.3.1;
+						LastSwiftMigration = 0800;
 					};
 				};
 			};
@@ -191,6 +198,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B8F206DD1D8960070062BA50 /* UserTableViewCell.xib in Resources */,
 				B8E298EE1D8163C400752349 /* LaunchScreen.storyboard in Resources */,
 				B8E298EB1D8163C400752349 /* Assets.xcassets in Resources */,
 				B8E298E91D8163C400752349 /* Main.storyboard in Resources */,
@@ -254,7 +262,8 @@
 			files = (
 				B8E298FD1D81756200752349 /* UserTableViewCell.swift in Sources */,
 				B8E298FB1D816B7900752349 /* GitHubUser.swift in Sources */,
-				B8E298F91D8167EA00752349 /* MainViewController.swift in Sources */,
+				B8F206DB1D882D550062BA50 /* FollowersViewController.swift in Sources */,
+				B8E298F91D8167EA00752349 /* UsersListViewController.swift in Sources */,
 				B86D8D131D8805B800865B07 /* PendingOperations.swift in Sources */,
 				B8E299071D8712F300752349 /* ImageDownloader.swift in Sources */,
 				B8E298E41D8163C400752349 /* AppDelegate.swift in Sources */,
@@ -299,8 +308,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -327,6 +338,7 @@
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 2.3;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -345,8 +357,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -365,6 +379,8 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 2.3;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 			};
@@ -374,11 +390,13 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = F2D24E903C5AE9FD25B100A5 /* Pods-GitHubUsers.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = GitHubUsers/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.test.GitHubUsers;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 2.3;
 			};
 			name = Debug;
 		};
@@ -386,11 +404,13 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 2FA881F9496F147270A0466F /* Pods-GitHubUsers.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = GitHubUsers/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.test.GitHubUsers;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 2.3;
 			};
 			name = Release;
 		};

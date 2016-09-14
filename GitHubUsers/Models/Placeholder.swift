@@ -20,8 +20,8 @@ class Placeholder {
       UIGraphicsBeginImageContextWithOptions(size, false, scale)
       
       let context = UIGraphicsGetCurrentContext()
-      CGContextSetFillColorWithColor(context, UIColor.grayColor().CGColor)
-      CGContextFillRect(context, CGRect(x: 0, y: 0, width: size.width, height: size.height))
+      CGContextSetFillColorWithColor(context!, UIColor.grayColor().CGColor)
+      CGContextFillRect(context!, CGRect(x: 0, y: 0, width: size.width, height: size.height))
       
       // Setup the font attributes that will be later used to dictate how the text should be drawn
       let textFontAttributes = [
@@ -43,6 +43,6 @@ class Placeholder {
       // End the context now that we have the image we need
       UIGraphicsEndImageContext()
       //Pass the image back up to the caller
-      return newImage
+      return newImage!
    }
 }

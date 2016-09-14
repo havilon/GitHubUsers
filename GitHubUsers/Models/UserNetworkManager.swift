@@ -11,11 +11,11 @@ import Alamofire
 import Gloss
 
 class UserNetworkManger {
-   static func getUsers(sinceId: Int? = nil, completion: ([GitHubUser]?) -> ()) {
+   private static func getUsers(params: String? = nil, completion: ([GitHubUser]?) -> ()) {
       var urlString = "https://api.github.com/users"
       
-      if sinceId != nil {
-         urlString = urlString + "?since=\(sinceId!)"
+      if params != nil {
+         urlString += params!
       }
       
       Alamofire.request(.GET, urlString).responseJSON { response in
@@ -36,5 +36,35 @@ class UserNetworkManger {
             print(error)
          }
       }
+   }
+   
+   static func getUsersForPage(page: Int? = nil, completion: ([GitHubUser]?) -> ()) {
+      var params: String?
+      
+      if page != nil {
+         params = "?page=\(page!)"
+      }
+      
+      self.getUsers(params, completion: completion)
+   }
+   
+   static func getUsersSinceId(sinceId: Int? = nil, completion: ([GitHubUser]?) -> ()) {
+      var params: String?
+      
+      if sinceId != nil {
+         params = "?since=\(sinceId!)"
+      }
+      
+      self.getUsers(params, completion: completion)
+   }
+   
+   static func getFollowersForUser(userName: String!, completion: ([GitHubUser]?) -> ()) {
+      guard userName != nil else {
+         return
+      }
+      
+      let params = "/\(userName)/followers"
+      
+      self.getUsers(params, completion: completion)
    }
 }
